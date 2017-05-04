@@ -72,6 +72,7 @@ def write():
     classLen = None
     subclassLen = None
     modLen = None
+    habLen = None
 
     try:
         fields = arcpy.ListFields(currentLayer)
@@ -86,6 +87,8 @@ def write():
                 subclassLen = field.length
             elif field.name == "Special_Modifier":
                 modLen = field.length
+            elif field.name == "HABITAT":
+                habLen = field.length
             # DEBUG: Use when someone changes the column names
             # arcpy.AddMessage(field.name)
     except Exception as e:
@@ -166,9 +169,14 @@ def write():
             try:
                 row.setValue("HABITAT", scFinal)
             except Exception as g:
-                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format(scFinal, "HABITAT")
-                arcpy.AddMessage(errorMessage)
-                errorLog.append(errorMessage)
+                if len(scFinal) <= habLen:
+                    errorMessage = "Failed to write [{0}]. 2 Errors Found. [Error 1/2] The maximum length that can be written to this field is: {1}. [Error 2/2] The column name has likely been changed. Expected column name: [{2}]".format(scFinal, habLen, "HABITAT")
+                    arcpy.AddMessage(errorMessage)
+                    errorLog.append(errorMessage)
+                else:
+                    errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format(scFinal, "HABITAT")
+                    arcpy.AddMessage(errorMessage)
+                    errorLog.append(errorMessage)
 
             cursor.updateRow(row)
 

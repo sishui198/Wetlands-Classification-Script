@@ -367,3 +367,215 @@ Failed to write [UBr]. The column name has likely been changed. Expected column 
 Failed to write [UBr]. The column name has likely been changed. Expected column name: [HABITAT]
 Failed to write [UBr]. The column name has likely been changed. Expected column name: [HABITAT]
 Failed to write [UBr]. The column name has likely been changed. Expected column name: [HABITAT]
+
+Log Created: 5/4/2017
+------------------------
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+Failed to write [Mixosaline]. The maximum length that can be written to this field is: None
+
+Log Created: 5/4/2017
+------------------------
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+Failed to write [Regularly Exposed]. The maximum length that can be written to this field is: None
+
+Log Created: 5/4/2017
+------------------------
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+Failed to write [PAB3b]. The maximum length that can be written to this field is: None
+
+Log Created: 5/4/2017
+------------------------
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
+Failed to write [L2UB4h]. The column name has likely been changed. Expected column name: [HABITAT]
