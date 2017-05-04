@@ -5,6 +5,7 @@ try:
     import arcpy
     import datetime
     import os.path
+    from inspect import currentframe, getframeinfo
 except ImportError:
     #python 3 module
     import tkinter as tk
@@ -12,6 +13,7 @@ except ImportError:
     import arcpy
     import datetime
     import os.path
+    from inspect import currentframe, getframeinfo
 except Exception as e:
     arcpy.AddMessage(e)
 
@@ -85,12 +87,12 @@ def write():
                 classLen = field.length
             elif field.name == "Subclass":
                 subclassLen = field.length
-            elif field.name == "Special_Modifier":
+            elif field.name == "Modifier":
                 modLen = field.length
             elif field.name == "HABITAT":
                 habLen = field.length
             # DEBUG: Use when someone changes the column names
-            # arcpy.AddMessage(field.name)
+            arcpy.AddMessage(field.name)
     except Exception as e:
         arcpy.AddMessage(e)
 
@@ -142,13 +144,13 @@ def write():
                 errorLog.append(errorMessage)
             try:
                 if len(lc[4]) <= modLen:
-                    row.setValue("Special_Modifier", lc[4])
+                    row.setValue("Modifier", lc[4])
                 else:
                     errorMessage = "Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[4], modLen)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
             except Exception as f:
-                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[4], "Special_Modifier")
+                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[4], "Modifier")
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -345,7 +347,8 @@ def eSystem(*args):
             displayClassifications(lc, sc)
 
         else:
-            errorMessage = "[!] {0} is an invalid classification. {1} is not a System".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem)
+            frameinfo = getframeinfo(currentframe())
+            errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a System".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem, frameinfo.lineno)
             arcpy.AddMessage(errorMessage)
             errorLog.append(errorMessage)
 
@@ -418,7 +421,8 @@ def eSubsystem(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -447,7 +451,8 @@ def eSubsystem(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -479,7 +484,8 @@ def eSubsystem(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -513,7 +519,8 @@ def eSubsystem(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -590,12 +597,14 @@ def eSubsystem(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
         else:
-            errorMessage = "[!] {0} is an invalid classification. {1} is not a System | [1]".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem)
+            frameinfo = getframeinfo(currentframe())
+            errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a System | [1]".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem, frameinfo.lineno)
             arcpy.AddMessage(errorMessage)
             errorLog.append(errorMessage)
 
@@ -694,7 +703,8 @@ def eClass(*args):
                     displayClassifications(lc, sc)
 
                 else:
-                    errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
 
@@ -745,12 +755,14 @@ def eClass(*args):
                     displayClassifications(lc, sc)
 
                 else:
-                    errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -803,7 +815,8 @@ def eClass(*args):
                     displayClassifications(lc, sc)
 
                 else:
-                    errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
 
@@ -898,12 +911,14 @@ def eClass(*args):
                     displayClassifications(lc, sc)
 
                 else:
-                    errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -989,7 +1004,8 @@ def eClass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1031,7 +1047,8 @@ def eClass(*args):
                     displayClassifications(lc, sc)
 
                 else:
-                    errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
 
@@ -1106,12 +1123,14 @@ def eClass(*args):
                     displayClassifications(lc, sc)
 
                 else:
-                    errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1206,7 +1225,8 @@ def eClass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1308,12 +1328,14 @@ def eClass(*args):
 
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
         else:
-            errorMessage = "[!] {0} is an invalid classification. {1} is not a System | [1]".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem)
+            frameinfo = getframeinfo(currentframe())
+            errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a System | [1]".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem, frameinfo.lineno)
             arcpy.AddMessage(errorMessage)
             errorLog.append(errorMessage)
 
@@ -1372,7 +1394,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format( (longClassification.get() + " | " + "[" + userSubclass + "]") , userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format( (longClassification.get() + " | " + "[" + userSubclass + "]") , userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
                 arcpy.AddMessage(errorLog)
@@ -1405,7 +1428,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1437,7 +1461,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1465,7 +1490,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1487,7 +1513,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1524,7 +1551,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1566,7 +1594,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1593,7 +1622,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1640,7 +1670,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1687,7 +1718,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1709,7 +1741,8 @@ def eSubclass(*args):
                 displayClassifications(lc, sc)
 
             else:
-                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass, frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -1719,7 +1752,8 @@ def eSubclass(*args):
             displayClassifications(lc, sc)
 
         else:
-            errorMessage = "[!] {0} is an invalid classification. {1} is not a Class | [1]".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+            frameinfo = getframeinfo(currentframe())
+            errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Class | [1]".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass, frameinfo.lineno)
             arcpy.AddMessage(errorMessage)
             errorLog.append(errorMessage)
 
@@ -2211,7 +2245,8 @@ def eModifiers(*args):
                     sc[4] = sctemp
             displayClassifications(lc, sc)
         else:
-            errorMessage = "[!] {0} is an invalid classification. {1} is not a Modifier".format((longClassification.get() + " | " + "[" + userModifiers + "]"), userModifiers)
+            frameinfo = getframeinfo(currentframe())
+            errorMessage = "[!][line {2}] {0} is an invalid classification. {1} is not a Modifier".format((longClassification.get() + " | " + "[" + userModifiers + "]"), userModifiers, frameinfo.lineno)
             arcpy.AddMessage(errorMessage)
             errorLog.append(errorMessage)
 
