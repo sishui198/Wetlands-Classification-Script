@@ -91,8 +91,8 @@ def write():
                 modLen = field.length
             elif field.name == "HABITAT":
                 habLen = field.length
-            # DEBUG: Use when someone changes the column names
-            arcpy.AddMessage(field.name)
+            ## DEBUG: Use when someone changes the column names
+            # arcpy.AddMessage(field.name)
     except Exception as e:
         arcpy.AddMessage(e)
 
@@ -102,55 +102,65 @@ def write():
                 if len(lc[0]) <= sysLen:
                     row.setValue("System", lc[0])
                 else:
-                    errorMessage = "Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[0], sysLen)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[line {2}] Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[0], sysLen, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
             except Exception as a:
-                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format(lc[0], "System")
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[line {2}] Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format(lc[0], "System", frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
             try:
                 if len(lc[1]) <= subsysLen:
                     row.setValue("Subsystem", lc[1])
                 else:
-                    errorMessage = "Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[1], subsysLen)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[line {2}] Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[1], subsysLen, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
             except Exception as b:
-                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[1], "Subsystem")
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[line {2}] Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[1], "Subsystem", frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
             try:
                 if len(lc[2]) <= classLen:
                     row.setValue("Class", lc[2])
                 else:
-                    errorMessage = "Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[2], classLen)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[line {2}] Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[2], classLen, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
             except Exception as c:
-                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[2], "Class")
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[line {2}] Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[2], "Class", frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
             try:
                 if len(lc[3]) <= subclassLen:
                     row.setValue("Subclass", lc[3])
                 else:
-                    errorMessage = "Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[3], subclassLen)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[line {2}] Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[3], subclassLen, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
             except Exception as d:
-                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[3], "Subclass")
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[line {2}] Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[3], "Subclass", frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
             try:
                 if len(lc[4]) <= modLen:
                     row.setValue("Modifier", lc[4])
                 else:
-                    errorMessage = "Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[4], modLen)
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[line {2}] Failed to write [{0}]. The maximum length that can be written to this field is: {1}".format(lc[4], modLen, frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
             except Exception as f:
-                errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[4], "Modifier")
+                frameinfo = getframeinfo(currentframe())
+                errorMessage = "[line {2}] Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format( lc[4], "Modifier", frameinfo.lineno)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
 
@@ -172,11 +182,13 @@ def write():
                 row.setValue("HABITAT", scFinal)
             except Exception as g:
                 if len(scFinal) <= habLen:
-                    errorMessage = "Failed to write [{0}]. 2 Errors Found. [Error 1/2] The maximum length that can be written to this field is: {1}. [Error 2/2] The column name has likely been changed. Expected column name: [{2}]".format(scFinal, habLen, "HABITAT")
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[line {2}] Failed to write [{0}]. 2 Errors Found. [Error 1/2] The maximum length that can be written to this field is: {1}. [Error 2/2] The column, frameinfo.lineno name has likely been changed. Expected column name: [{2}]".format(scFinal, habLen, "HABITAT")
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
                 else:
-                    errorMessage = "Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format(scFinal, "HABITAT")
+                    frameinfo = getframeinfo(currentframe())
+                    errorMessage = "[line {2}] Failed to write [{0}]. The column name has likely been changed. Expected column name: [{1}]".format(scFinal, "HABITAT", frameinfo.lineno)
                     arcpy.AddMessage(errorMessage)
                     errorLog.append(errorMessage)
 
@@ -721,7 +733,7 @@ def eClass(*args):
                     sc[2] = "AB"
                     displayClassifications(lc, sc)
 
-                if userClass == "Reef":
+                elif userClass == "Reef":
 
                     dictSubclass = ['Coral', 'Worm', 'Not Applicable']
                     for choice in dictSubclass:
