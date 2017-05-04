@@ -326,6 +326,16 @@ def eSystem(*args):
             sc[0] = "R"
             displayClassifications(lc, sc)
 
+        elif userSystem == "Upland":
+            dictSubsystem = ['Urban', 'Agriculture', 'Range', 'Forest', 'Barren']
+            for choice in dictSubsystem:
+                cboxSubsystem['menu'].add_command(label = choice,
+                    command = tk._setit(svSubsystem, choice))
+
+            lc[0] = "Upland"
+            sc[0] = "U"
+            displayClassifications(lc, sc)
+
         else:
             errorMessage = "[!] {0} is an invalid classification. {1} is not a System".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem)
             arcpy.AddMessage(errorMessage)
@@ -508,6 +518,73 @@ def eSubsystem(*args):
             lc[1] = "Not Applicable"
             sc[1] = "N/A"
             displayClassifications(lc, sc)
+
+        elif userSystem == "Upland":
+
+            if userSubsystem == "Urban":
+                dictClass = ['High Intensity (Industrial)', 'Moderate Intensity', 'Low Intensity (Residential)', 'Developed Open Space']
+                for choice in dictClass:
+                    cboxClass['menu'].add_command(label = choice,
+                        command = tk._setit(svClass, choice))
+
+                lc[1] = "Urban"
+                sc[1] = "U"
+                displayClassifications(lc, sc)
+
+            elif userSubsystem == "Agriculture":
+                dictClass = ['Not Applicable']
+                for choice in dictClass:
+                    cboxClass['menu'].add_command(label = choice,
+                        command = tk._setit(svClass, choice))
+
+                lc[1] = "Agriculture"
+                sc[1] = "A"
+                displayClassifications(lc, sc)
+
+            elif userSubsystem == "Range":
+                dictClass = ['Not Applicable']
+                for choice in dictClass:
+                    cboxClass['menu'].add_command(label = choice,
+                        command = tk._setit(svClass, choice))
+
+                lc[1] = "Range"
+                sc[1] = "R"
+                displayClassifications(lc, sc)
+
+            elif userSubsystem == "Forest":
+                dictClass = ['Deciduous', 'Evergreen', 'Mixed']
+                for choice in dictClass:
+                    cboxClass['menu'].add_command(label = choice,
+                        command = tk._setit(svClass, choice))
+
+                lc[1] = "Forest"
+                sc[1] = "F"
+                displayClassifications(lc, sc)
+
+            elif userSubsystem == "Barren":
+                dictClass = ['Not Applicable']
+                for choice in dictClass:
+                    cboxClass['menu'].add_command(label = choice,
+                        command = tk._setit(svClass, choice))
+
+                lc[1] = "Barren"
+                sc[1] = "B"
+                displayClassifications(lc, sc)
+
+            elif userSubsystem == "Scrub/Shrub":
+                dictClass = ['Deciduous', 'Evergreen', 'Mixed']
+                for choice in dictClass:
+                    cboxClass['menu'].add_command(label = choice,
+                        command = tk._setit(svClass, choice))
+
+                lc[1] = "Scrub/Shrub"
+                sc[1] = "SS"
+                displayClassifications(lc, sc)
+
+            else:
+                errorMessage = "[!] {0} is an invalid classification. {1} is not a Subsystem".format((longClassification.get() + " | " + "[" + userSubsystem + "]"), userSubsystem)
+                arcpy.AddMessage(errorMessage)
+                errorLog.append(errorMessage)
 
         else:
             errorMessage = "[!] {0} is an invalid classification. {1} is not a System | [1]".format((longClassification.get() + " | " + "[" + userSystem + "]"), userSystem)
@@ -1119,6 +1196,108 @@ def eClass(*args):
                 lc[2] = "Forested"
                 sc[2] = "FO"
                 displayClassifications(lc, sc)
+
+            else:
+                errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
+                arcpy.AddMessage(errorMessage)
+                errorLog.append(errorMessage)
+
+        elif userSystem == "Upland":
+
+            if userSubsystem == "Urban":
+
+                if userClass == "High Intensity (Industrial)":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "High Intensity (Industrial)"
+                    sc[2] = "1"
+                    displayClassifications(lc, sc)
+
+                elif userClass == "Moderate Intensity":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "Moderate Intensity"
+                    sc[2] = "2"
+                    displayClassifications(lc, sc)
+
+                elif userClass == "Low Intensity (Residential)":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "Low Intensity (Residential)"
+                    sc[2] = "3"
+                    displayClassifications(lc, sc)
+
+                elif userClass == "Developed Open Space":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "Developed Open Space"
+                    sc[2] = "4"
+                    displayClassifications(lc, sc)
+
+            elif userSubsystem == "Range" || userSubsystem == "Agriculture" || userSubsystem == "Barren":
+
+                if userClass == "Not Applicable":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "Not Applicable"
+                    sc[2] = "N/A"
+                    displayClassifications(lc, sc)
+
+            elif userSubsystem == "Forest" || userSubsystem == "Scrub/Shrub":
+
+                if userClass == "Deciduous":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "Deciduous"
+                    sc[2] = "6"
+                    displayClassifications(lc, sc)
+
+                elif userClass == "Evergreen":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "Evergreen"
+                    sc[2] = "7"
+                    displayClassifications(lc, sc)
+
+                elif userClass == "Mixed":
+
+                    dictSubclass = ['Not Applicable']
+                    for choice in dictSubclass:
+                        cboxSubclass['menu'].add_command(label = choice,
+                            command = tk._setit(svSubclass, choice))
+
+                    lc[2] = "Mixed"
+                    sc[2] = "8"
+                    displayClassifications(lc, sc)
+
 
             else:
                 errorMessage = "[!] {0} is an invalid classification. {1} is not a Class".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
@@ -2072,7 +2251,7 @@ sc = ["N/A", "N/A", "N/A", "N/A", "N/A"]
 
 # Choices to fill the comboboxes/selectors
 # Note: tkinter.OptionMenu requires that the first entry be blank
-dictSystem = ["", "Lacustrine", "Palustrine", "Marine", "Estuarine", "Riverine"]
+dictSystem = ["", "Lacustrine", "Palustrine", "Marine", "Estuarine", "Riverine", "Upland"]
 dictSubsystem = []
 dictClass = []
 dictSubclass = []
