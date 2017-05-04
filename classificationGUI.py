@@ -1250,7 +1250,7 @@ def eClass(*args):
                     sc[2] = "4"
                     displayClassifications(lc, sc)
 
-            elif userSubsystem == "Range" || userSubsystem == "Agriculture" || userSubsystem == "Barren":
+            elif ((userSubsystem == "Range") or (userSubsystem == "Agriculture") or (userSubsystem == "Barren")):
 
                 if userClass == "Not Applicable":
 
@@ -1263,7 +1263,7 @@ def eClass(*args):
                     sc[2] = "N/A"
                     displayClassifications(lc, sc)
 
-            elif userSubsystem == "Forest" || userSubsystem == "Scrub/Shrub":
+            elif userSubsystem == "Forest" or userSubsystem == "Scrub/Shrub":
 
                 if userClass == "Deciduous":
 
@@ -1704,6 +1704,11 @@ def eSubclass(*args):
                 errorMessage = "[!] {0} is an invalid classification. {1} is not a Subclass | [1]".format((longClassification.get() + " | " + "[" + userSubclass + "]"), userSubclass)
                 arcpy.AddMessage(errorMessage)
                 errorLog.append(errorMessage)
+
+        elif (userClass == 'High Intensity (Industrial)') or (userClass == 'Moderate Intensity') or (userClass == 'Low Intensity (Residential)') or (userClass == 'Developed Open Space') or (userClass == 'Not Applicable') or (userClass == 'Deciduous') or (userClass == 'Evergreen') or (userClass == 'Mixed'):
+            lc[3] = "Not Applicable"
+            sc[3] = "N/A"
+            displayClassifications(lc, sc)
 
         else:
             errorMessage = "[!] {0} is an invalid classification. {1} is not a Class | [1]".format((longClassification.get() + " | " + "[" + userClass + "]"), userClass)
