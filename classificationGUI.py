@@ -1780,7 +1780,7 @@ def eSubclass(*args):
     'Artificially Flooded',
     'Subtidal',
     'Irregularly Exposed',
-    'Regularly Exposed',
+    'Regularly Flooded',
     'Irregularly Flooded',
     'Temporarily Flooded-Tidal',
     'Seasonally Flooded-Tidal',
@@ -1948,7 +1948,7 @@ def eModifiers(*args):
                     lc[4] = lctemp
                     sc[4] = sctemp
             displayClassifications(lc, sc)
-        elif userModifiers == 'Regularly Exposed':
+        elif userModifiers == 'Regularly Flooded':
             if lc[4] == "N/A":
                 lc[4] = userModifiers
                 sc[4] = 'N'
