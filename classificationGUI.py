@@ -5,6 +5,7 @@ try:
     import arcpy
     import datetime
     import os.path
+    import sys
     from inspect import currentframe, getframeinfo
 except ImportError:
     #python 3 module
@@ -13,6 +14,7 @@ except ImportError:
     import arcpy
     import datetime
     import os.path
+    import sys
     from inspect import currentframe, getframeinfo
 except Exception as e:
     arcpy.AddMessage(e)
@@ -2266,9 +2268,73 @@ def eModifiers(*args):
 
 # Get selection from ArcMap ----------------------------------------------------
 try:
+    # Test/Analyze layers
     currentMap = arcpy.mapping.MapDocument("CURRENT")
     dataFrame = arcpy.mapping.ListDataFrames(currentMap)[0]
-    currentLayer = arcpy.mapping.ListLayers(dataFrame, '', None)[0]
+    allLayers = arcpy.mapping.ListLayers(dataFrame, '', None)
+    numLayers = len(allLayers)
+    currentLayer = None
+
+    if numLayers > 1:
+
+        def eLayers(*args):
+            global currentLayer
+            currentLayer = svLayers.get()
+            arcpy.AddMessage("[  NOTE  ] You are now editing shapefiles for the feature layer: {0}".format(currentLayer))
+
+        # Build temp window
+        tempRoot = tk.Tk()
+        tempRoot.columnconfigure(0, weight = 1)
+        tempRoot.rowconfigure(0, weight = 1)
+        tempRoot.wm_title("Edit Data Frame")
+
+        # Build temp master frame
+        tempFrame = ttk.Frame(tempRoot, width = 200, height = 400)
+        tempFrame.grid(column = 0, row = 0)
+        tempFrame.columnconfigure(0, weight = 1)
+        tempFrame.rowconfigure(0, weight = 1)
+
+        # Build temp content Frame
+        tempContentFrame = ttk.Frame(tempFrame)
+        tempContentFrame.grid(column = 0, row = 1, columnspan = 2, padx = 5, pady = 5)
+        tempContentFrame.columnconfigure(0, weight = 1)
+        tempContentFrame.rowconfigure(0, weight = 1)
+
+       # Build & place layer label
+        layerLabel = ttk.Label(tempFrame,
+            text = "Multiple layers detected. Select a layer for editing. Confirm your selection by closing this window.")
+        layerLabel.grid(column = 0, row = 0, columnspan = 2, padx = 15, pady = 10)
+
+        # Label for the combobox/selector
+        labelLayers = ttk.Label(tempContentFrame, text = "Layers")
+
+        #Build Combobox/Selector
+        dictLayers = ['']
+        dictLayers.extend(allLayers)
+        svLayers = tk.StringVar(tempRoot)
+        svLayers.trace("w", eLayers)
+        cboxLayers = ttk.OptionMenu(tempContentFrame, svLayers, *dictLayers)
+
+        # Place labels and comboboxes/selectors
+        labelLayers.grid(row = 1, column = 1, padx=5, pady=5)
+        cboxLayers.grid(row =1, column = 2, padx=5, pady=5)
+
+        tempRoot.mainloop()
+    elif numLayers == 1:
+        currentLayer = allLayers[0]
+    else:
+        frameinfo = getframeinfo(currentframe())
+        errorMessage = "[!][line {0}] Invalid quantity of feautre layers provided.\n...\nExiting Script.".format(frameinfo.lineno)
+        arcpy.AddMessage(errorMessage)
+        errorLog.append(errorMessage)
+        sys.exit()
+
+    # Edge case: multiple layers are detected; the user closes the popup
+    # dialogue without making a selection. Default: select the first layer
+    # in the table of contents
+    if currentLayer == None:
+        currentLayer = allLayers[0]
+        arcpy.AddMessage("[  NOTE  ] Multiple layers were detected. The layer selection window has been closed without making a selection. Ensure that this layer is compatible with your intended modifications.\n...\nDefaulting to the first layer in the table of contents. This will not be logged as an error.")
 except Exception as e:
     arcpy.AddMessage(e)
 
